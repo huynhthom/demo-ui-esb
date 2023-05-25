@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test UI ESB</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="text-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h2>Logo</h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="/index.html">Danh sách dịch vụ IBM</a></li>
+                    <li><a href="/regis-services.html">Quản trị dịch vụ đăng ký</a></li>
+                    <li><a href="/notification.html">Xác thực đăng ký dịch vụ</a></li>
+                    <li class="active"><a href="/static-chart.html">Biểu đồ thống kê</a></li>
+                </ul><br>
+            </div>
+            <br>
+
+            <div class="col-sm-9">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Tình trạng hoạt động của dịch vụ</a></li>
+                    <li><a data-toggle="tab" href="#menu1">Thống kê dịch vụ theo thời gian</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Thông kê dịch vụ theo người dùng</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3 class="text-center">Tình trạng hoạt động của dịch vụ</h3>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên dịch vụ</th>
+                                            <th>Tình trạng</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit</td>
+                                            <td><span class="label label-success">Hoạt động</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dịch vụ 2</td>
+                                            <td><span class="label label-danger">Không hoạt động</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dịch vụ 3</td>
+                                            <td><span class="label label-danger">Không hoạt động</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dịch vụ 4</td>
+                                            <td><span class="label label-success">Hoạt động</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dịch vụ 5</td>
+                                            <td><span class="label label-success">Hoạt động</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dịch vụ 6</td>
+                                            <td><span class="label label-danger">Không hoạt động</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dịch vụ 7</td>
+                                            <td><span class="label label-success">Hoạt động</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dịch vụ 8</td>
+                                            <td><span class="label label-danger">Không hoạt động</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dịch vụ 9</td>
+                                            <td><span class="label label-success">Hoạt động</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-7">
+                                <canvas id="chartHealth" style="width:100%; margin: auto"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu1" class="tab-pane fade">
+                        <h3 class="text-center">Thống kê dịch vụ theo thời gian</h3>
+
+                        <div class="row w-50 text-center m-auto py-20">
+                            <div class="col-md-6">
+                                <label for="birthdaytime">Ngày bắt đầu:</label>
+                                <input type="date" id="birthdaytime" name="birthdaytime" value="2023-05-23">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="birthdaytime">Ngày kết thúc:</label>
+                                <input type="date" id="birthdaytime" name="birthdaytime" value="2023-05-26">
+                            </div>
+                        </div>
+
+                        <canvas id="chartAllUser"></canvas>
+
+                        <div class="">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tên dịch vụ</th>
+                                        <th>Tình trạng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 2</td>
+                                        <td><span class="label label-danger">Thất bại</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 3</td>
+                                        <td><span class="label label-danger">Thất bại</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 4</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 5</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 6</td>
+                                        <td><span class="label label-danger">Thất bại</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 7</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 8</td>
+                                        <td><span class="label label-danger">Thất bại</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 9</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                        <h3 class="text-center">Thông kê dịch vụ theo người dùng</h3>
+
+                        <div class="row text-center m-auto py-20">
+                            <div class="col-md-3">
+                                <label for="birthdaytime">Ngày bắt đầu:</label>
+                                <input type="date" id="birthdaytime" name="birthdaytime" value="2023-05-23">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="birthdaytime">Ngày kết thúc:</label>
+                                <input type="date" id="birthdaytime" name="birthdaytime" value="2023-05-26">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="sel1">Người dùng:</label>
+                                <select class="py-3-5" id="sel1">
+                                    <option>Người dùng 1</option>
+                                    <option>Người dùng 2</option>
+                                    <option>Người dùng 3</option>
+                                    <option>Người dùng 4</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="sel1">Dịch vụ:</label>
+                                <select class="py-3-5" id="sel1">
+                                    <option>Dịch vụ 1</option>
+                                    <option>Dịch vụ 2</option>
+                                    <option>Dịch vụ 2</option>
+                                    <option>Dịch vụ 2</option>
+                                    <option>Dịch vụ 2</option>
+                                    <option>Dịch vụ 2</option>
+                                    <option>Dịch vụ 2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <canvas id="chartEachUser"></canvas>
+
+                        <div class="">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tên dịch vụ</th>
+                                        <th>Tình trạng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 2</td>
+                                        <td><span class="label label-danger">Thất bại</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 3</td>
+                                        <td><span class="label label-danger">Thất bại</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 4</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 5</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 6</td>
+                                        <td><span class="label label-danger">Thất bại</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 7</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 8</td>
+                                        <td><span class="label label-danger">Thất bại</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dịch vụ 9</td>
+                                        <td><span class="label label-success">Thành công</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./main.js"></script>
+    <script src="./chart.js"></script>
+</body>
+
+</html>

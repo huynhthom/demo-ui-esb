@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tin tức mới nhất</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <span class="glyphicon glyphicon-search" aria-hidden="true">⬆️</span>
+    <div class="text-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Tin tức</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Tiêu điểm</h1>
+            <p>Thông tin cập nhật về các sự kiện và tin tức mới nhất.</p>
+        </div>
+    </header>
+
+    <div class="row container">
+        <div class="col-md-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                <span class="input-group-btn">
+                    <button class="btn btn-info" type="button">Tìm kiếm</button>
+                </span>
+            </div>
+            <div class="list-group" style="margin-top: 16px;">
+                <a href="#" class="list-group-item active list-group-item-info">
+                    Danh mục tin tức
+                </a>
+                <button type="button" class="list-group-item list-group-item-info">Công nghệ thông tin</button>
+                <button type="button" class="list-group-item list-group-item-info">Môi trường</button>
+                <button type="button" class="list-group-item list-group-item-info">Tài nguyên biển</button>
+                <button type="button" class="list-group-item list-group-item-info">Tài nguyên đất đo đạc và bản
+                    đồ</button>
+                <button type="button" class="list-group-item list-group-item-info">Tài nguyên nước và khoáng
+                    sản</button>
+            </div>
+            <div class="list-group list-group-item-info" style="margin-top: 16px;">
+                <a href="#" class="list-group-item active list-group-item-info">
+                    Các trang liên kết
+                </a>
+                <button type="button" class="list-group-item list-group-item-info">Dapibus ac facilisis in</button>
+                <button type="button" class="list-group-item list-group-item-info">Morbi leo risus</button>
+                <button type="button" class="list-group-item list-group-item-info">Porta ac consectetur ac</button>
+                <button type="button" class="list-group-item list-group-item-info">Vestibulum at eros</button>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+            <section class="section-a">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="https://picsum.photos/id/237/300/200" alt="...">
+                                <div class="caption">
+                                    <h3>Tiêu đề bài viết 1</h3>
+                                    <p>Mô tả ngắn gọn về bài viết 1.</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">Chủ đề 1</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="https://picsum.photos/id/238/300/200" alt="...">
+                                <div class="caption">
+                                    <h3>Tiêu đề bài viết 2</h3>
+                                    <p>Mô tả ngắn gọn về bài viết 2.</p>
+                                    <p><a href="./detail.html" class="btn btn-primary" role="button">Chủ đề 1</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="https://picsum.photos/id/239/300/200" alt="...">
+                                <div class="caption">
+                                    <h3>Tiêu đề bài viết 3</h3>
+                                    <p>Mô tả ngắn gọn về bài viết 3.</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">Chủ đề 1</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="pager col-md-12">
+                            <li class="next"><a href="#">Xem tất cả <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section-b">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Tin tức</h1>
+                            <!-- <p>Thông tin chi tiết về bài viết lớn. Bài viết này có thể chứa nhiều đoạn văn bản và hình ảnh để
+                        giúp đọc giả hiểu rõ hơn về nội dung của bài viết.</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Chủ đề 1</a></p> -->
+                        </div>
+                        <!-- <div class="col-md-6">
+                    <img src="https://picsum.photos/id/240/500/300" alt="...">
+                </div> -->
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="https://picsum.photos/id/237/300/200" alt="...">
+                                <div class="caption">
+                                    <h3>Tiêu đề bài viết 1</h3>
+                                    <p>Mô tả ngắn gọn về bài viết 1.</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">Chủ đề 1</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="https://picsum.photos/id/238/300/200" alt="...">
+                                <div class="caption">
+                                    <h3>Tiêu đề bài viết 2</h3>
+                                    <p>Mô tả ngắn gọn về bài viết 2.</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">Chủ đề 1</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="https://picsum.photos/id/239/300/200" alt="...">
+                                <div class="caption">
+                                    <h3>Tiêu đề bài viết 3</h3>
+                                    <p>Mô tả ngắn gọn về bài viết 3.</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">Chủ đề 1</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="pager col-md-12">
+                            <li class="next"><a href="#">Xem tất cả <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Thông tin liên hệ</h3>
+                    <p>Địa chỉ: 123 đường ABC</p>
+                    <p>Điện thoại: 0123456789</p>
+                    <p>Email: example@example.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Liên kết</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

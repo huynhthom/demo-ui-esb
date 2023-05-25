@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test UI ESB</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="text-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h2>Logo</h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="/index.html">Danh sách dịch vụ IBM</a></li>
+                    <li><a href="/regis-services.html">Quản trị dịch vụ đăng ký</a></li>
+                    <li class="active"><a href="/notification.html">Xác thực đăng ký dịch vụ</a></li>
+                    <li><a href="/static-chart.html">Biểu đồ thống kê</a></li>
+                </ul><br>
+            </div>
+            <br>
+
+            <div class="col-sm-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Thông báo người dùng đăng ký</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <ul class="nav nav-pills">
+                            <li class="active"><a data-toggle="tab" href="#searchUser">Tìm kiếm theo người dùng</a></li>
+                            <li><a data-toggle="tab" href="#searchDate">Tìm kiếm theo thời gian</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="searchUser" class="tab-pane fade in active">
+                                <form class="mt-15">
+                                    <div class="input-group mb-15">
+                                        <input type="text" class="form-control" placeholder="Tìm kiếm ... ">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">
+                                                <i class="glyphicon glyphicon-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="searchDate" class="tab-pane fade">
+                                <div class="row text-center m-auto w-50  py-20">
+                                    <div class="col-md-6">
+                                        <label for="birthdaytime">Ngày bắt đầu:</label>
+                                        <input type="date" id="birthdaytime" name="birthdaytime" value="2023-05-23">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label for="birthdaytime">Ngày kết thúc:</label>
+                                        <input type="date" id="birthdaytime" name="birthdaytime" value="2023-05-26">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#home">Người dùng đăng ký</a>
+                            </li>
+                            <li><a data-toggle="tab" href="#menu1">Lịch sử đăng ký</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane fade in active">
+                                <div class="panel panel-success mt-15">
+                                    <div class="panel-heading">Người dùng 1 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success"
+                                                            data-toggle="modal" data-target="#providerService">Cấp
+                                                            quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" onclick="chellAllService('user1')"
+                                                            class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Người dùng 2 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" onclick="chellAllService('user2')"
+                                                            class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user2"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user2"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user2"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Người dùng 3 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" onclick="chellAllService('user3')"
+                                                            class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user3"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user3"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user3"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Người dùng 4 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" onclick="chellAllService('user4')"
+                                                            class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user4"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user4"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user4"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Người dùng 5 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user5"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user5"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user5"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="menu1" class="tab-pane fade">
+                                <div class="panel panel-success mt-15">
+                                    <div class="panel-heading">Người dùng 1 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">Người dùng 2 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">Người dùng 3 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Người dùng 4 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Người dùng 5 (09:45 25/5/2023)</div>
+                                    <div class="panel-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Cấp quyền</button>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <button type="button" class="btn btn-info">Duyệt tất cả</button>
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 2</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">Dịch vụ 3</td>
+                                                    <td class="text-center text-nowrap"><input class="user1"
+                                                            type="checkbox" value="">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Duyệt Service -->
+    <div id="providerService" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Duyệt dịch vụ</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc muốn cấp các quyền đã chọn?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-success">Cấp quyền</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

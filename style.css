@@ -1,0 +1,67 @@
+.w-full {
+    width: 100%;
+}
+
+.w-90 {
+    width: 90%
+}
+
+.w-50 {
+    width: 60%
+}
+
+.h-full {
+    height: 100%;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.my-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.my-50 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.py-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.py-3-5 {
+    padding-top: 3.5px;
+    padding-bottom: 3.5px;
+}
+
+.pb-5 {
+    padding-bottom: 5px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}

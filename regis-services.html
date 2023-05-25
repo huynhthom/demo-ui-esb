@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test UI ESB</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="text-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h2>Logo</h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="/index.html">Danh sách dịch vụ IBM</a></li>
+                    <li class="active"><a href="/regis-services.html">Quản trị dịch vụ đăng ký</a></li>
+                    <li><a href="/notification.html">Xác thực đăng ký dịch vụ</a></li>
+                    <li><a href="/static-chart.html">Biểu đồ thống kê</a></li>
+                </ul><br>
+            </div>
+            <br>
+
+            <div class="col-sm-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Danh sách các dịch vụ IBM đã đăng ký</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="mb-15">
+                            <button type="button" class="btn btn-warning" data-toggle="modal"
+                                data-target="#addNewService"><span class="glyphicon glyphicon-plus"
+                                    aria-hidden="true"></span> Cấp dịch vụ</button>
+                        </div>
+
+                        <form>
+                            <div class="input-group mb-15">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm Người dùng">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <button type="button" class="btn btn-default w-full h-full mb-10" data-toggle="collapse"
+                            data-target="#demo">Người dùng 1</button>
+                        <div id="demo" class="collapse">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td> </td>
+                                        <td class="text-nowrap">
+                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                data-target="#deleteAllService">Xoá tất cả</button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                        <td class="text-nowrap text-center">
+                                            <button onclick="checkDeleteService(this)" type="button"
+                                                class="btn btn-default"><span class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 2</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 3</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 4</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 5</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="button" class="btn btn-default w-full h-full mb-10" data-toggle="collapse"
+                            data-target="#demo5">Người dùng 2</button>
+                        <div id="demo5" class="collapse">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-nowrap">
+                                            <button type="button" class="btn btn-danger">Xoá tất cả</button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 2</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 3</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 4</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 5</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="button" class="btn btn-default w-full h-full mb-10" data-toggle="collapse"
+                            data-target="#demo6">Người dùng 3</button>
+                        <div id="demo6" class="collapse">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-nowrap">
+                                            <button type="button" class="btn btn-danger">Xoá tất cả</button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 2</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 3</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 4</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 5</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button type="button" class="btn btn-default w-full h-full mb-10" data-toggle="collapse"
+                            data-target="#demo2">Người dùng 4</button>
+                        <div id="demo2" class="collapse">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-nowrap">
+                                            <button type="button" class="btn btn-danger">Xoá tất cả</button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 2</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 3</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 4</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 5</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button type="button" class="btn btn-default w-full h-full mb-10" data-toggle="collapse"
+                            data-target="#demo3">Người dùng 5</button>
+                        <div id="demo3" class="collapse">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-nowrap">
+                                            <button type="button" class="btn btn-danger">Xoá tất cả</button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 2</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 3</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 4</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 5</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="button" class="btn btn-default w-full h-full mb-10" data-toggle="collapse"
+                            data-target="#demo4">Người dùng 6</button>
+                        <div id="demo4" class="collapse">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-nowrap">
+                                            <button type="button" class="btn btn-danger">Xoá tất cả</button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-nowrap w-90">Dịch vụ 1</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 2</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 3</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 4</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap">Dịch vụ 5</td>
+                                        <td class="text-nowrap text-center"> <button onclick="checkDeleteService(this)"
+                                                type="button" class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-trash"
+                                                    aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal New Service -->
+            <div id="addNewService" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Cấp dịch vụ mới</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-30">
+                                <label>Tài khoản người dùng</label>
+                                <select class="js-example-basic-multiple" name="states[]" style="width: 100%;">
+                                    <option value="AL1">Người dùng 1</option>
+                                    <option value="AL2">Người dùng 2</option>
+                                    <option value="AL3">Người dùng 3</option>
+                                    <option value="AL4">Người dùng 4</option>
+                                    <option value="AL5">Người dùng 5</option>
+                                    <option value="AL6">Người dùng 6</option>
+                                    <option value="AL7">Người dùng 7</option>
+                                    <option value="AL8">Người dùng 8</option>
+                                </select>
+                            </div>
+                            <div class="mb-30">
+                                <label>Dịch vụ</label>
+                                <select class="js-example-basic-multiple" name="states[]" multiple="multiple"
+                                    style="width: 100%;">
+                                    <option value="AL1">Dịch vụ 1</option>
+                                    <option value="AL2">Dịch vụ 2</option>
+                                    <option value="AL3">Dịch vụ 3</option>
+                                    <option value="AL4">Dịch vụ 4</option>
+                                    <option value="AL5">Dịch vụ 5</option>
+                                    <option value="AL6">Dịch vụ 6</option>
+                                    <option value="AL7">Dịch vụ 7</option>
+                                    <option value="AL8">Dịch vụ 8</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-success">Thêm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Delete All Service -->
+            <div id="deleteAllService" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Xoá dịch vụ</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Bạn có chắc muốn xoá tất cả dịch vụ đã đăng ký của tài khoản?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-danger">Xoá</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Delete  Service -->
+            <div id="deleteService" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Xoá dịch vụ</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Bạn có chắc muốn xoá dịch vụ đã đăng ký của tài khoản?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-warning">Xoá</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

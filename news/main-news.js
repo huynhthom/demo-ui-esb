@@ -1,0 +1,1 @@
+var module = angular.module('gn_search_news', ['gn_search']);
