@@ -24,28 +24,30 @@ let healthChart = new Chart("chartHealth", {
     }
 });
 
-// Chart.pluginService.register({
-//     beforeDraw: function (chart) {
-//         var width = chart.chart.width,
-//             height = chart.chart.height,
-//             ctx = chart.chart.ctx;
+Chart.pluginService.register({
+    beforeDraw: function (chart) {
+        if (chart.canvas.id == "chartHealth") {
+            var width = chart.chart.width,
+                height = chart.chart.height,
+                ctx = chart.chart.ctx;
 
-//         ctx.restore();
-//         var fontSize = (height / 114).toFixed(2);
-//         ctx.font = fontSize + "em sans-serif";
-//         ctx.textBaseline = "middle";
+            ctx.restore();
+            var fontSize = (height / 114).toFixed(2);
+            ctx.font = fontSize + "em sans-serif";
+            ctx.textBaseline = "middle";
 
-//         var text = "100",
-//             textX = Math.round((width - ctx.measureText(text).width) / 2),
-//             textY = (height / 2) + 15;
+            var text = "100",
+                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                textY = (height / 2) + 15;
 
-//         ctx.fillText(text, textX, textY);
-//         ctx.save();
-//     }
-// });
+            ctx.fillText(text, textX, textY);
+            ctx.save();
+        }
+    }
+});
 
 /* FIXME: Total of requests (success/failure/all) all services/all users */
-var data = {
+var dataAll = {
     labels: ['23/5/2023', '24/5/2023', '25/5/2023', '26/5/2023'],
     datasets: [
         {
@@ -63,7 +65,7 @@ var data = {
 
 let allUserChart = new Chart("chartAllUser", {
     type: 'bar',
-    data: data,
+    data: dataAll,
     options: {
         scales: {
             x: { stacked: true },
@@ -73,7 +75,7 @@ let allUserChart = new Chart("chartAllUser", {
 });
 
 /* FIXME: Total of requests (success/failure/all) all services/all users */
-var data = {
+var dataEach = {
     labels: ['23/5/2023 (150)', '24/5/2023', '25/5/2023', '26/5/2023'],
     datasets: [
         {
@@ -91,7 +93,7 @@ var data = {
 
 let eachUserChart = new Chart("chartEachUser", {
     type: 'bar',
-    data: data,
+    data: dataEach,
     options: {
         scales: {
             x: { stacked: true },
